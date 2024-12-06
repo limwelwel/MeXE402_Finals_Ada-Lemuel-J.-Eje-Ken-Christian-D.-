@@ -40,8 +40,27 @@
           - **Text Color**: Define in BGR format (e.g., (0, 0, 0) for black).
      - Adjust properties for better visibility against the background.
 
-## IV. Conclusion
+- **Add Text to Image**:
+     - Loop through the player details and overlay text:
+          - Use cv2.putText to add the player's name and jersey number.
+          - Apply positions and font properties dynamically from the dictionary.
+     - Optionally, enhance design:
+          - Use colors inspired by the Philippine flag (e.g., red, yellow, blue).
+          - Alternate colors for names and jersey numbers for visual appeal.
 
+- **Display Modified Image**:
+     - Use cv2_imshow(image) to display the edited image in Google Colab.
+     - Verify the placement and styling of the text.
+     
+## IV. Conclusion
+<p align="justify"> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The project successfully demonstrated the use of OpenCV to overlay player details, such as names and jersey numbers, onto an image. This was achieved with customizable text properties, including font style, size, color, and positioning, ensuring clarity and readability. The use of thematic colors inspired by the Philippine flag added a creative and visually appealing element to the output.
+
+<p align="justify"> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; However, several challenges were encountered during the process. Ensuring the text remained legible against complex or busy backgrounds required careful selection of text colors and placement. Adjusting positions dynamically for multiple players to avoid overlap or misalignment also presented a difficulty, especially when dealing with varying image layouts. Managing color contrast was crucial to maintaining visibility without compromising the aesthetic quality of the annotations.
+
+<p align="justify"> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Despite these challenges, the outcomes were highly positive. The final annotated images were clear, organized, and visually appealing, effectively highlighting player details. The methodology developed is not only reusable but also scalable, making it applicable for similar image annotation tasks in sports, presentations, or other creative projects. This work emphasizes the balance between technical precision and design considerations in image processing.
 
 ## V. Additional Materials
 
