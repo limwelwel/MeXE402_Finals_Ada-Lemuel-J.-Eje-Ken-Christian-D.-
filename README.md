@@ -8,7 +8,8 @@
 <br> 
 
 ## I. Introduction
-
+<p align="justify"> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adding text to images is a fundamental task in computer vision, serving as a bridge between visual and textual information. It plays a crucial role in numerous applications, including image annotation, visual communication, and augmented reality. The challenge lies in placing text that is both visually appealing and contextually informative while considering factors such as text positioning, font style, size, color, and the background's complexity. The ability to overlay text on images enables effective data representation, enhances interpretability, and facilitates tasks such as automated labeling, dynamic content generation, and accessibility improvements. In computer vision, this capability is essential for creating informative datasets, developing human-computer interaction systems, and enriching real-world visual understanding. By addressing challenges such as text readability, positioning, and seamless integration with diverse image contexts, the task highlights the significance of combining visual and textual data for smarter and more intuitive visual systems.
 
 ## II. Abstract
 
