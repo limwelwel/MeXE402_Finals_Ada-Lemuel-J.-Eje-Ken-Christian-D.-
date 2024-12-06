@@ -64,8 +64,121 @@
 
 ## V. Additional Materials
 
+<p align="justify"> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This program demonstrates the process of adding a player's name and jersey number to an image of a Gilas Pilipinas basketball player using OpenCV. The code is designed to enhance the visual appeal of the image while clearly displaying the player's information.
+  
+### Code for Adding Player Name and Jersey Number to one Gilas Pilipinas Basketball Player Image
+
+    import cv2
+    from google.colab.patches import cv2_imshow
+
+    # Load the uploaded image
+      image_path = '/content/Gilas Pilipinas Basketball/gilas jb.jpg'
+      image = cv2.imread(image_path)
+    
+    # Get the image dimensions
+      image_height, image_width, _ = image.shape
+    
+    # Define text details for the single player
+      player = {"name": "Justin Brownlee", "number": "Jersey No. 32", "position": (100, 400)}  # Adjusted Y-position for a lower placement
+    
+    # Font properties
+      font = cv2.FONT_HERSHEY_TRIPLEX
+      font_scale = 4.5  # Increased the font scale for better visibility
+      font_color = (0, 0, 0)  # Black
+      thickness = 5  # Increased thickness for better visibility
+    
+    # Add text to the image for the single player
+      name_text = player["name"]
+      number_text = player["number"]
+      x, y = player["position"]
+    
+    # Add name
+      cv2.putText(image, name_text, (x, y), font, font_scale, font_color, thickness, lineType=cv2.LINE_AA)
+    # Add jersey number (slightly below the name)
+      cv2.putText(image, number_text, (x, y + 200), font, font_scale, font_color, thickness, lineType=cv2.LINE_AA)
+    
+    # Resize the image for display (adjust width and height as needed)
+      output_width = 600  # Set desired width
+      output_height = int(image_height * (output_width / image_width))  # Keep aspect ratio
+      resized_image = cv2.resize(image, (output_width, output_height))
+    
+    # Display the resized image
+      cv2_imshow(resized_image)
+    
+    # Save the modified image
+      output_path = '/mnt/data/gilas_single_player_with_text.jpg'
+      cv2.imwrite(output_path, resized_image)
+      print(f"Image saved to {output_path}")
+
+### Code for Adding Players Name and Jersey Numbers to three Gilas Pilipinas Basketball Players Image
+
+    import cv2
+    from google.colab.patches import cv2_imshow
+    
+    # Load the uploaded image
+      image_path = '/content/Gilas Pilipinas Basketball/Gilas Pilipinas.jpg'
+      image = cv2.imread(image_path)
+    
+    # Get the image dimensions
+      image_height, image_width, _ = image.shape
+    
+    # Define text details for each player
+      players = [
+          {"name": "Dwight Ramos", "number": "Jersey No. 24", "position": (50, 50)},  # Left player
+          {"name": "Kai Sotto", "number": "Jersey No. 11", "position": (540, 50)},    # Middle player
+          {"name": "Justin Brownlee", "number": "Jersey No. 32", "position": (1300, 50)}, # Right player
+      ]
+      
+    # Font properties
+      font = cv2.FONT_HERSHEY_DUPLEX
+      font_scale = 1.3
+      thickness = 2
+    
+    # Define the colors based on the Philippine flag (Blue, Red, Yellow)
+      colors = [(0, 0, 255), (0, 255, 255), (255, 0, 0)]  # Red, Yellow, Blue (BGR format)
+    
+    # Add text to the image with flag-based colors
+      for i, player in enumerate(players):
+          name_text = player["name"]
+          number_text = player["number"]
+          x, y = player["position"]
+    
+        # Use a different color for each player (cycling through the flag's colors)
+          name_color = colors[i % len(colors)]
+          number_color = colors[(i + 1) % len(colors)]
+    
+        # Add name with the selected color
+          cv2.putText(image, name_text, (x, y), font, font_scale, name_color, thickness, lineType=cv2.LINE_AA)
+    
+        # Add jersey number slightly below the name with another color
+          cv2.putText(image, number_text, (x, y + 40), font, font_scale, number_color, thickness, lineType=cv2.LINE_AA)
+    
+    # Resize the image for display (adjust width and height as needed)
+      output_width = 800  # Set desired width
+      output_height = int(image_height * (output_width / image_width))  # Keep aspect ratio
+      resized_image = cv2.resize(image, (output_width, output_height))
+    
+    # Display the resized image
+      cv2_imshow(resized_image)
+    
+    # Save the modified image
+      output_path = '/mnt/data/gilas_with_flag_text.jpg'
+      cv2.imwrite(output_path, image)
+      print(f"Image saved to {output_path}")
+
+### Results
+<p align="center">
+<img src="Images/gilas jb.png"  height="500px"/> <img src="Images/gilas dwight.png" height="500px"/> <img src="Images/gilas kai.png" height="500px"/>
+
+<p align="center">
+<img src="Images/gilas pilipinas.png"  height="500px"/>
 
 ## VI. References
+Misbah Mohammed. (2020, December 29). OpenCV Tutorial - Easy run on Colab with Code [Video]. YouTube. https://www.youtube.com/watch?v=E3Lg4aZVCAU
+
+In photos: Gilas Pilipinas 11 for FIBA OQT. (n.d.). One-network. https://www.onesports.ph/gilas/article/22284/in-photos-gilas-pilipinas-11-for-fiba-oqt#google_vignette
+
 
 
 
