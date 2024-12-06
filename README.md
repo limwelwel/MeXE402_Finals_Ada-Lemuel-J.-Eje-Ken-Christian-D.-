@@ -7,6 +7,23 @@
 <h1 align="center"> OpenCV Projects </h1> 
 <br> 
 
+## I. Introduction
+
+
+## II. Abstract
+
+
+## III. Project Methods
+
+
+## IV. Conclusion
+
+
+## V. Additional Materials
+
+
+## VI. References
+
 
 
 
